@@ -1,0 +1,28 @@
+.dropdown-svg > svg {
+  margin-bottom:-.3rem ;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.animal-dropdown-button, .sales-dropdown-button, .supplies-dropdown-button{
+  font-weight: 500;
+  color: #414141;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: .5rem .75rem;
+  margin: 5px;
+  font-size: 1rem;
+  line-height: 1.7;
+  border-radius: .25rem;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+}
+
+.animal-dropdown, .sales-dropdown, .supplies-dropdown{
+  margin-top: 1rem;
+}
+.animal-dropdown-container, .sales-dropdown-container, .supplies-dropdown-container {
+  margin:.5rem 1rem;
+}

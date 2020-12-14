@@ -1,0 +1,51 @@
+db.sales.insertMany([
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "hens",
+    details: "grade",
+    unitCost: 5,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "eggs",
+    details: "grade",
+    unitCost: 5,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "meat",
+    details: "grade",
+    unitCost: 5,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "hens",
+    details: "kienyeji",
+    unitCost: 5,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "chicks",
+    details: "kienyeji",
+    unitCost: 50,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "cocks",
+    details: "grade",
+    unitCost: 5,
+    total: 500,
+  },
+  {
+    date: "Fri Nov 13 2020 20:21:01 GMT+0300 (East Africa Time)",
+    name: "hens",
+    details: "grade",
+    unitCost: 50,
+    total: 500,
+  },
+]);

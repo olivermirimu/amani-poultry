@@ -5,15 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "initialize:db": "cd initialData && mongo Amani-Poultry < initialSales.js && mongo Amani-Poultry <  initialChicken.js && mongo Amani-Poultry < initialSupplies.js && mongo Amani-Poultry <  initialProducts.js"
   },
   "author": "NICO",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.11",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
-  }
+  "license": "ISC"
 }

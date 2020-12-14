@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./scripts/css/styles.css">
-  <script src="./scripts/js/login.js"></script>
-  
-  <title>Login</title>
+  <script src="./scripts/js/signup.js"></script>
+
+  <title>signup</title>
 </head>
 
 <body>
@@ -17,44 +17,48 @@
       <div class="amani-blue form-header">
         <h1>Amani Poultry Farm</h1>
       </div>
-      <form onsubmit="login(event)" class="container-section">
+      <form onsubmit="signup(event)" class="container-section">
         <div class="form-body-header ">
-          <h2>Login</h2>
-          <p>Enter your email address and password to access the system</p>
+          <h2>Sign Up</h2>
+          <p>Enter your email address and password and an account will be created for you</p>
         </div>
         <div class="form-body">
           <div class="form-group">
             <label for="email">Email: </label>
-            <input class="form-control" type="text" name="email" required placeholder="Enter Email" id="login-email" />
+            <input class="form-control" type="text" name="email" required placeholder="Enter Email" id="signup-email" />
           </div>
           <div class="form-group">
-            <label for="password">Paswword: </label>
+            <label for="password">Password: </label>
             <input class="form-control" type="password" name="password" required placeholder="Enter Password"
-              id="login-password" />
+              id="signup-password" />
           </div>
-          <div class="form-group login-button-container">
-            <button class="btn amani-blue" type="submit" onclick="login(event)">Log In</button>
+          <div class="form-check">
+            <input type="checkbox" name="TnC" id="TnC" class="form-input-check">
+            <label for="TnC">Agree to terms and conditions</label>
+          </div>
+          <div class="form-group signup-button-container">
+            <button class="btn amani-blue" type="submit" onclick="signup(event)">Sign Up</button>
           </div>
         </div>
       </form>
-      <div class="form-footer">Don't have an account? <a href="/signup">Sign Up</a> </div>
+      <div class="form-footer">Don't have an account? <a href="/login">Log In</a> </div>
     </section>
   </main>
   <footer></footer>
   <script>
-    function submitLogin(email, password) {
+    function submitsignup(email, password) {
       console.log(email, password);
       // fetch to submit
       // on response if succesful
       window.location.replace("/dashboard");
     }
 
-    function login(event) {
+    function signup(event) {
       event.preventDefault();
       const password = document.getElementById("password");
       const email = document.getElementById("email");
 
-      submitLogin(email, password);
+      submitsignup(email, password);
     }
   </script>
 </body>
