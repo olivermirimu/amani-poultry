@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./scripts/css/styles.css">
-  <script src="./scripts/js/login.js"></script>
-  
+  <script src="./scripts/js/main.js"></script>
+  <script src="./services/apiCalls.js"></script>
+
   <title>Login</title>
 </head>
 
@@ -21,6 +22,10 @@
         <div class="form-body-header ">
           <h2>Login</h2>
           <p>Enter your email address and password to access the system</p>
+        </div>
+        <div class="error-box hide" id="error-box">
+          <p id="form-error">
+          </p>
         </div>
         <div class="form-body">
           <div class="form-group">
@@ -43,16 +48,26 @@
   <footer></footer>
   <script>
     function submitLogin(email, password) {
-      console.log(email, password);
       // fetch to submit
-      // on response if succesful
-      window.location.replace("/dashboard");
+      if (email && password) {
+        loginCall({
+          email,
+          password
+        }).then(response => {
+          if (response.message) {
+            document.getElementById("error-box").classList.remove("hide");
+            document.getElementById("form-error").innerText = response.message;
+            return
+          }
+          return window.location.replace("/dashboard");
+        }).catch(err => console.log(err))
+      }
     }
 
     function login(event) {
       event.preventDefault();
-      const password = document.getElementById("password");
-      const email = document.getElementById("email");
+      const password = document.getElementById("login-password").value;
+      const email = document.getElementById("login-email").value;
 
       submitLogin(email, password);
     }

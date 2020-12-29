@@ -26,11 +26,9 @@ function toggleTab(event) {
 
 function toggleMenu(event) {
   event.preventDefault();
-  let menu = document.getElementById("side-nav");
+  document.getElementById("side-nav").classList.toggle("hide-nav");
+  document.querySelector("body").classList.toggle("dimmed");
+  document.getElementById("nav-right-arrow").classList.toggle("hide");
+  document.getElementById("nav-left-arrow").classList.toggle("hide");
 
-  if (menu.classList.contains("hide-nav")) {
-    console.log(true);
-    return;
-  }
-  console.log(false);
 }

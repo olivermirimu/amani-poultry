@@ -159,3 +159,51 @@ function editSupplies(method, record) {
     body: JSON.stringify(record),
   }).then((response) => response.json());
 }
+
+// auth routes
+
+function loginCall(user) {
+  return fetch(`${window.location.origin}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  }).then((response) => {
+    storeToken(response);
+    return response.json();
+  });
+}
+function registerCall(user) {
+  return fetch(`${window.location.origin}/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  }).then((response) => {
+    storeToken(response);
+    return response.json();
+  });
+}
+function fetchUser(user) {
+  return fetch(`${window.location.origin}/auth/current-user`, {
+    method: "POST",
+    headers: appendHeaders(),
+    body: JSON.stringify(user),
+  }).then((response) => response.json());
+}
+
+function logoutCall() {
+  return fetch(`${window.location.origin}/auth/logout`, {
+    method: "DELETE",
+    headers: appendHeaders(),
+  }).then((response) => console.log(response));
+}
+// fetch jwt from localstorage
+function appendHeaders() {
+  const token = window.localStorage.getItem("token");
+  const headers = { "Content-Type": "application/json", Authorization: token };
+  return headers;
+}
+
+function storeToken(response) {
+  const token = response.headers.get("Authorization");
+  window.localStorage.setItem("token", token);
+}

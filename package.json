@@ -7,21 +7,28 @@
     "postinstall": "cd ./backend && npm install",
     "start": "nodemon ./frontend/server.js",
     "start:api": "nodemon ./backend/server.js",
-    "start:db": "cd backend && npm run initialize:db"
+    "start:db": "cd backend && npm run initialize:db",
+    "gen:keyPair": "node backend/cryptography/generateKeypair.js"
   },
   "author": "Gideon Amani Taifa",
   "license": "ISC",
   "dependencies": {
     "apexcharts": "^3.22.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
+    "cors": "^2.8.5",
     "debug": "^4.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.11",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "mongoose": "^5.10.11"
-  }, "env":{
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0"
+  },
+  "env": {
     "MONGODB_URI": "mongodb+srv://Nico:nicoamanipoultry@amani-poultry.kigg6.mongodb.net/Amani-Poultry?retryWrites=true&w=majority"
   },
   "engines": {
